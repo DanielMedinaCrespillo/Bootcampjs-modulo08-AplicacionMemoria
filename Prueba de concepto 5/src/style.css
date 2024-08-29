@@ -1,0 +1,57 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(123, 230, 230);
+}
+
+#tabla {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.cuadrado {
+  box-sizing: border-box;
+  border: solid rgb(128, 178, 252);
+  border-radius: 32px;
+  background-color: rgb(128, 178, 252);
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#iniciarpartida {
+  box-sizing: border-box;
+  border: 5px solid purple;
+  border-radius: 32px;
+  background-color: rgb(142, 102, 235);
+  width: 18rem;
+  height: 8rem;
+  cursor: pointer;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 32px;
+}
+
+#intentos {
+  margin: 52px;
+  padding: 12px;
+  font-size: x-large;
+  font-weight: 700;
+  color: rgb(255, 0, 212);
+  border: 5px solid purple;
+  border-radius: 32px;
+  display: none;
+}
