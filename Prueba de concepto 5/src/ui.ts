@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const manejarClickEnCarta = (indice: number) => {
   if (sePuedeVoltearLaCarta(tablero, indice)) {
     volteaCarta(tablero, indice);
-    console.log(tablero.cartas);
+  } else {
+    cartaYaEstaVolteada();
   }
 };
 
@@ -37,6 +38,14 @@ const volteaCarta = (tablero: Tablero, indice: number) => {
   voltearLaCarta(tablero, indice);
   mostrarImagenAnimal(indice);
   mirarSiEsLaSegundaCarta(tablero);
+  voltearImagen(indice);
+};
+
+const voltearImagen = (indice: number): void => {
+  const cuadrado = document.querySelector(`div[data-indice-id="${indice}"]`);
+  if (cuadrado && cuadrado instanceof HTMLDivElement) {
+    cuadrado.classList.toggle("flipped");
+  }
 };
 
 const mostrarImagenAnimal = (indice: number) => {
@@ -66,7 +75,12 @@ const encontradaPareja = (
 ) => {
   parejaEncontrada(tablero, indiceA, indiceB);
   if (esPartidaCompleta(tablero)) {
-    console.log("Enhorabuena has encontrado todas las parejas");
+    const mensajeGanador = document.getElementById("ganador");
+    if (mensajeGanador && mensajeGanador instanceof HTMLDivElement) {
+      mensajeGanador.innerHTML =
+        "Enhorabuena!<br>Has descubierto todas las cartas!";
+      mensajeGanador.style.display = "block";
+    }
   }
 };
 
@@ -98,6 +112,16 @@ const ponerImagenBocaAbajo = (cartas: Carta[]) => {
   }
 };
 
+const cartaYaEstaVolteada = () => {
+  const mensajeVolteada = document.getElementById("cartavolteada");
+  if (mensajeVolteada && mensajeVolteada instanceof HTMLDivElement) {
+    mensajeVolteada.innerHTML = "Esta carta ya esta volteada!";
+    mensajeVolteada.style.display = "block";
+    setTimeout(() => {
+      mensajeVolteada.style.display = "none";
+    }, 1000);
+  }
+};
 const elementoIntentos = () => {
   const divIntentos = document.getElementById("intentos");
 
@@ -106,3 +130,11 @@ const elementoIntentos = () => {
     divIntentos.style.display = "block";
   }
 };
+
+const empezarJuego = document.getElementById("iniciarpartida");
+
+if (empezarJuego && empezarJuego instanceof HTMLButtonElement) {
+  empezarJuego.addEventListener("click", function () {
+    location.reload();
+  });
+}

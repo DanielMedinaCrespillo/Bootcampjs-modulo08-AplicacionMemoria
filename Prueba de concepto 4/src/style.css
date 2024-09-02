@@ -1,0 +1,29 @@
+body {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(123, 230, 230);
+}
+
+.cuadrado {
+  box-sizing: border-box;
+  border: solid rgb(128, 178, 252);
+  border-radius: 32px;
+  background-color: rgb(128, 178, 252);
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px;
+}
+
+.cuadrado img {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 32px;
+  width: 100%;
+  height: 100%;
+}

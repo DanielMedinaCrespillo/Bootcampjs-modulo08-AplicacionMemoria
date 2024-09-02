@@ -11,7 +11,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 12px;
+  gap: 18px;
+  margin-top: 15rem;
 }
 
 .cuadrado {
@@ -26,6 +27,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.cuadrado {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.cuadrado.flipped {
+  transform: rotateY(180deg);
+}
+
+div[data-indice-id]:hover {
+  height: 105%;
+  width: 105%;
 }
 
 #iniciarpartida {
@@ -53,5 +69,41 @@ body {
   color: rgb(255, 0, 212);
   border: 5px solid purple;
   border-radius: 32px;
+  display: none;
+  position: absolute;
+  top: 20px;
+}
+
+#ganador {
+  position: absolute;
+  font-size: 24px;
+  z-index: 2;
+  color: rgb(4, 0, 255);
+  font-weight: 900;
+  border-radius: 18px;
+  background-color: rgb(84, 245, 159);
+  padding: 24px;
+  height: 6rem;
+  width: 22rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#cartavolteada {
+  position: absolute;
+  font-size: 24px;
+  z-index: 2;
+  color: rgb(0, 0, 3);
+  font-weight: 900;
+  border-radius: 18px;
+  background-color: rgb(250, 14, 37);
+  padding: 24px;
+  height: 2rem;
+  width: 18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   display: none;
 }

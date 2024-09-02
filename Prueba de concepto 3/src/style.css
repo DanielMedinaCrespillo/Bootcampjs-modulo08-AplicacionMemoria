@@ -1,0 +1,28 @@
+body {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(123, 230, 230);
+}
+
+#tabla {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cuadrado {
+  box-sizing: border-box;
+  border: solid rgb(128, 178, 252);
+  border-radius: 32px;
+  background-color: rgb(128, 178, 252);
+  width: 10rem;
+  height: 10rem;
+  cursor: pointer;
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
